@@ -25,7 +25,15 @@ SECRET_KEY = 'wsfdj6gq%_-#2dkgwf9wm@am77ke)$mkbl6207^g#*0915jd)@'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['ralphwebmasterr.pythonanywhere.com', '127.0.0.1']
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_HOST_USER = 'rallralph.haver.gmail.com'
+EMAIL_HOST_PASSWORD = 'mariage090197'
+EMAIL_PORT = 587
+EMAIL_USED_TLS = True
+DEFAULT_FROM_EMAIL = 'rallralph.haver@gmail.com'
 
 
 # Application definition
@@ -54,7 +62,7 @@ ROOT_URLCONF = 'Ralph.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': ['templates'],
+        'DIRS': [os.path.join(BASE_DIR,'templates'),],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [

@@ -8,8 +8,7 @@
   <meta content="" name="description">
   {% load static %}
   <!-- Favicons -->
-  <link href={% static 'img/favicon.png' %} rel="icon">
-  <link href={% static 'img/apple-touch-icon.png' rel="apple-touch-icon">
+  <link href={% static 'img/favicon.ico' %} rel="icon">
 
   <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,700,700i|Raleway:300,400,500,700,800|Montserrat:300,400,700" rel="stylesheet">
@@ -72,7 +71,7 @@
 
       <nav id="nav-menu-container">
         <ul class="nav-menu">
-          <li class="menu-active"><a href="#body">Acceuil</a></li>
+          <li class="menu-active"><a href="#body">Accueil</a></li>
           <li><a href="#about">A Propos</a></li>
           <li><a href="#services">Compétences</a></li>
           <li><a href="#Portfolio">Expériences</a></li>
@@ -205,23 +204,20 @@
           <h2>Langues</h2>
           <div class="row">
             <div class="col icon box wow fadeInRight" data-wow-delay="0.2s">
-              <i class="fa fa-flag"></i> Anglais: Bien
+              <i class="fa fa-flag"> </i> Anglais: Bien
             </div>
             <div class="col icon box wow fadeInRight" data-wow-delay="0.2s">
-              <i class="fa fa-flag"></i> Français: Très Bien
-            </div>
-            <div class="col icon box wow fadeInRight" data-wow-delay="0.2s">
-              <i class="fa fa-flag"></i> Creole: Très Bien
+              <i class="fa fa-flag"> </i> Français: Très Bien
             </div>
           </div>
         </div>
-
       </div>
     </section><!-- #clients -->
 
     <!--==========================
       Our Portfolio Section
     ============================-->
+    
     <section id="Portfolio">
       <div class="container">
         <div class="section-header">
@@ -309,8 +305,7 @@ entreprise quelconque</p>
 
       <div class="container">
         <div class="form">
-          <div id="sendmessage">Votre message a été envoyé. Merci!</div>
-          <div id="errormessage"></div>
+          
           <form action="" method="post" id="myForm" role="form" class="contactForm">{% csrf_token %}
             <div class="section-header">
               <h2>Formulaire de contact</h2>
@@ -333,7 +328,9 @@ entreprise quelconque</p>
               <textarea class="form-control" name="message" rows="5" data-rule="required" data-msg="Svp, dit quelque chose" placeholder="Message"></textarea>
               <div class="validation"></div>
             </div>
-            <div class="text-center"><button type="submit">Envoyez Message</button></div>
+            <div class="text-center"><button type="submit" id="sub">Envoyez Message</button></div>
+            <div id="sendmessage"><img src={% static 'img/env.png' %} width="40" height="40"> Votre message a été envoyé. Merci! Ralph vous contactera sous peu.</div>
+          <div id="loadingmessage"><img src={% static 'img/send.gif' %} width="40" height="40"> Envoie du message en cours d'exécution</div>
           </form>
         </div>
 

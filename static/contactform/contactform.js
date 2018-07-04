@@ -94,6 +94,8 @@ jQuery(document).ready(function($) {
     } else{
       var str = $(this).serialize();
       var formData = JSON.stringify($("#myForm").serializeArray());
+      $("#sub").hide(500);
+      $("#loadingmessage").show(2000);
     }
 
     $.ajax({
@@ -105,16 +107,8 @@ jQuery(document).ready(function($) {
         csrfmiddlewaretoken: $('input[name=csrfmiddlewaretoken]').val(),
       },
       success: function(msg) {
-        if (msg == 'OK') {
-          $("#sendmessage").addClass("show");
-          $("#errormessage").removeClass("show");
-          $('.contactForm').find("input, textarea").val("");
-        } else {
-          $("#sendmessage").removeClass("show");
-          $("#errormessage").addClass("show");
-          $('#errormessage').html(msg);
-        }
-
+        $("#loadingmessage").hide(1000);
+        $("#sendmessage").show(2000);
       }
     });
     return false;
